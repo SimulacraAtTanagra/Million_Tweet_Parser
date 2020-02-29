@@ -17,4 +17,4 @@ required.add_argument(
         )
 args = required.parse_args()
 if __name__ == "__main__":
-    func(args.size,args.num,args.t)
+    sys.stdout.write(func(args.size,args.num,args.t) % "| more")

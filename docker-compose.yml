@@ -1,7 +1,0 @@
-versions: 3
-services:
-        pyth:
-                container_name: pyth
-                build:
-                        context: .
-               

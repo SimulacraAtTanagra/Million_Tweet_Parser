@@ -10,8 +10,9 @@ def func(page_size,pages,token):
 
     if pages <0:
         pages= math.ceil(int(total[0]['COUNT'])/page_size)
+        return(client.get(database,limit=total[0]['COUNT']))
     for i in range(pages):
-        print('/n/n/n',client.get(database,limit=page_size,offset=i*page_size),timeout=60)
+        return(str(client.get(database,limit=page_size,offset=i*page_size)))
 
 if __name__==("__main__"):
     func()

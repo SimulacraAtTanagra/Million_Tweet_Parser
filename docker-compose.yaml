@@ -1,0 +1,9 @@
+VERSIONS: '3'
+SERVICES:
+        pyth:
+                network_mode:host
+                container_name:pyth
+                build:
+                        context: .
+                volumes: 
+                - .:/app:rw

@@ -2,10 +2,11 @@ from requests import *
 import sodapy
 import math
 
-def func(page_size,pages,token):
+def func(page_size,pages,token,database_id):
+    print("Functiong working, boss!")
     api_url = 'data.cityofnewyork.us'
     client = sodapy.Socrata(api_url,token)
-    database = "nc67-uf89"
+    database = database_id
     total = client.get(database,select='COUNT(*)')
 
     if pages <0:

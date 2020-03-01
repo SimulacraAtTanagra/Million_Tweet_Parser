@@ -1,20 +1,33 @@
 import argparse
 import sys
+import os
 from src.getting import func
+
+print("Initializing application...")
 
 required = argparse.ArgumentParser()
 required.add_argument(
-        "--size",
+        "--page_size",
         type=int,
-        default=0
+        default=1
         )
 required.add_argument(
-        "--num",type=int,default=-999)
+        "--num_pages",type=int,default=-999)
 required.add_argument(
-        "--t",
+        "--output",
         type=str,
-        default=-1
         )
+token = os.environ['APP_KEY']
 args = required.parse_args()
+page_size = args.page_size
+num_pages = args.num_pages
+output = args.output
+database_id = "nc67-uf89"
+#if [__name__ == "__main__"] and [output != None]:
+#    with open(output) as f:
+#        f.write(func(page_size,num_pages,token))
 if __name__ == "__main__":
-    sys.stdout.write(func(args.size,args.num,args.t))
+    try:
+        sys.stdout.write(func(page_size,num_pages,token,database_id ))
+    except:
+        print("Something went wrong here boss")

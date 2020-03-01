@@ -9,7 +9,7 @@ required = argparse.ArgumentParser()
 required.add_argument(
         "--page_size",
         type=int,
-        default=1
+        required=True
         )
 required.add_argument(
         "--num_pages",type=int,default=-999)
@@ -23,10 +23,10 @@ page_size = args.page_size
 num_pages = args.num_pages
 output = args.output
 database_id = "nc67-uf89"
-#if [__name__ == "__main__"] and [output != None]:
-#    with open(output) as f:
-#        f.write(func(page_size,num_pages,token))
-if __name__ == "__main__":
+if [__name__ == "__main__"] and [output != None]:
+    with open(output,'w') as f:
+        f.write(func(page_size,num_pages,token,database_id))
+elif __name__ == "__main__":
     try:
         sys.stdout.write(func(page_size,num_pages,token,database_id ))
     except:

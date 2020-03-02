@@ -15,7 +15,7 @@ required.add_argument(
         "--num_pages",type=int,default=-999)
 required.add_argument(
         "--output",
-        type=str,
+        default=None
         )
 token = os.environ['APP_KEY']
 args = required.parse_args()
@@ -23,10 +23,10 @@ page_size = args.page_size
 num_pages = args.num_pages
 output = args.output
 database_id = "nc67-uf89"
-if [__name__ == "__main__"] and [output != None]:
+if output != None:
     with open(output,'w') as f:
         f.write(func(page_size,num_pages,token,database_id))
-elif __name__ == "__main__":
+else:
     try:
         sys.stdout.write(func(page_size,num_pages,token,database_id ))
     except:

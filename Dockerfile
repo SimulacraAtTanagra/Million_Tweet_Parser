@@ -4,6 +4,5 @@ WORKDIR /app
 
 COPY . .
 
-RUN pip install requests
-RUN pip install sodapy
+RUN pip install -r requirements.txt
 

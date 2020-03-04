@@ -17,7 +17,10 @@ required.add_argument(
         "--output",
         default=None
         )
-token = os.environ['APP_KEY']
+try:
+    token = os.environ['APP_KEY']
+except:
+    token = ''
 args = required.parse_args()
 page_size = args.page_size
 num_pages = args.num_pages

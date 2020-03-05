@@ -31,9 +31,9 @@ APP_KEY: This is how a user can pass along an APP_KEY for the api in a safe mann
 
 --page_size: This command line argument is required. It will ask for how many records to request from the API per call.
 
---num_pages: This command line argument is optional. If not provided, your script should continue requesting data until the entirety of the content has been exhausted. If this argument is provided, continue querying for data num_pages times.
+--num_pages: This command line argument is optional. If not provided, the script will continue requesting data until the entirety of the content has been exhausted. If this argument is provided, continue querying for data num_pages times.
 
---output: This command line argument is optional. If not provided, your script should simply print results to stdout. If provided, your script should write the data to the file (in this case, results.json).
+--output: This command line argument is optional. Specify a filename and extension to save output, otherwise it will print on screen by default.
 
 None of the arguments or variables above need to be encapsulated in quotes to denote string. 
  

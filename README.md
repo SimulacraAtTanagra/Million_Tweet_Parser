@@ -8,17 +8,19 @@ To run, first clone repository, then, after navigating in, build using the follo
 
 '''
 
-$ docker build -t million_tweet_parser:1.02 .
+    $ docker build -t million_tweet_parser:1.02 .
 
 '''
+
 
 
 Then, pass a commandline argument like the following to run:
 
 
+
 '''
 
-$ docker run -e APP_KEY={YOUR_APP_KEY} -t million_tweet_parser:1.02 python main.py --page_size=1000 --num_pages=4 --output=results.json
+    $ docker run -e APP_KEY={YOUR_APP_KEY} -t million_tweet_parser:1.02 python main.py --page_size=1000 --num_pages=4 --output=results.json
 
 '''
 

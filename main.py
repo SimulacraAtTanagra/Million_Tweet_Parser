@@ -30,8 +30,7 @@ output = args.output
 database_id = "nc67-uf89"
 if output == "es":
     es = create_and_update_index('parking_violations_index','violations')
-    dlist = []
-    dlist.append(func(page_size,num_pages,token,database_id))        
+    dlist = (func(page_size,num_pages,token,database_id))        
     push(dlist,es,page_size)
     #print('nothing')
 elif output != None:

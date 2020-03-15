@@ -28,15 +28,15 @@ page_size = args.page_size
 num_pages = args.num_pages
 output = args.output
 database_id = "nc67-uf89"
-if output != None:
-    with open(output,'w') as f:
-        f.write(func(page_size,num_pages,token,database_id))
-elif output == "es":
-    es = create_and_udpate_index()
+if output == "es":
+    es = create_and_update_index('parking-violations-index','violations')
     dlist = []
     dlist.append(func(page_size,num_pages,token,database_id))        
-    push(dlist,es)
+    push(dlist,es,page_size)
     #print('nothing')
+elif output != None:
+    with open(output,'w') as f:
+        f.write(func(page_size,num_pages,token,database_id))
 else:
     try:
         sys.stdout.write(str(func(page_size,num_pages,token,database_id )))

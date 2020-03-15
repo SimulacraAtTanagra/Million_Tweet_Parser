@@ -1,6 +1,7 @@
 version: "3.4"
 services:
   pyth:
+    image: million_tweet_parser:1.02
     network_mode: host
     container_name: pyth
     build:

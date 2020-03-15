@@ -2,6 +2,8 @@ import argparse
 import sys
 import os
 from src.getting import func
+from elasticsearch import Elasticsearch
+from src.esearch import create_and_update_index
 
 print("Initializing application...")
 
@@ -29,8 +31,12 @@ database_id = "nc67-uf89"
 if output != None:
     with open(output,'w') as f:
         f.write(func(page_size,num_pages,token,database_id))
+elif output == "es":
+    es = create_and_udpate_index()
+    
+    print('nothing')
 else:
     try:
-        sys.stdout.write(func(page_size,num_pages,token,database_id ))
+        sys.stdout.write(str(func(page_size,num_pages,token,database_id )))
     except:
         print("Something went wrong here boss")

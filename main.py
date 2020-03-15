@@ -2,8 +2,8 @@ import argparse
 import sys
 import os
 from src.getting import func
-from elasticsearch import Elasticsearch
 from src.esearch import create_and_update_index
+from src.esearch import push
 
 print("Initializing application...")
 
@@ -33,8 +33,10 @@ if output != None:
         f.write(func(page_size,num_pages,token,database_id))
 elif output == "es":
     es = create_and_udpate_index()
-    
-    print('nothing')
+    dlist = []
+    dlist.append(func(page_size,num_pages,token,database_id))        
+    push(dlist,es)
+    #print('nothing')
 else:
     try:
         sys.stdout.write(str(func(page_size,num_pages,token,database_id )))

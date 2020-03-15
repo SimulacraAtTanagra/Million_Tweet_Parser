@@ -34,7 +34,7 @@ def push(listobj,es,page_size):
             print(j)
             print(listobj[i][j])
             listobj[i][j]['issue_date'] = datetime.strptime(listobj[i][j]['issue_date'],'%m/%d/%Y')
-            es.index(index="parking_violations_index",ignore=400,doc_type="violations",id=int(listobj[i][j]['summons_numbers']), body=(listobj[i][j]))
+            es.index(index="parking_violations_index",ignore=400,doc_type="violations",id=int(listobj[i][j]['summons_number']), body=(listobj[i][j]))
 
 if __name__ == "__main__":
     es = create_and_update_index('parking_violations_index','violations')

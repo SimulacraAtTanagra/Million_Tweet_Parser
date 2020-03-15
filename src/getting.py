@@ -12,8 +12,10 @@ def func(page_size,pages,token,database_id):
     if pages <0:
         pages= math.ceil(int(total[0]['COUNT'])/page_size)
         return(client.get(database,limit=total[0]['COUNT']))
+    listobj=[]
     for i in range(pages):
-        return(client.get(database,limit=page_size,offset=i*page_size))
+        listobj.append(client.get(database,limit=page_size,offset=i*page_size))
+    return(listobj)
 
 if __name__==("__main__"):
     func()

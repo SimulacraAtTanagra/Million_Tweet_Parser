@@ -29,7 +29,7 @@ num_pages = args.num_pages
 output = args.output
 database_id = "nc67-uf89"
 if output == "es":
-    es = create_and_update_index('parking-violations-index','violations')
+    es = create_and_update_index('parking_violations_index','violations')
     dlist = []
     dlist.append(func(page_size,num_pages,token,database_id))        
     push(dlist,es,page_size)

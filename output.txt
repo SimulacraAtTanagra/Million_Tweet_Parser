@@ -1,0 +1,26 @@
+[
+  {
+    "health" : "green",
+    "status" : "open",
+    "index" : ".kibana",
+    "uuid" : "K8woRrvMQsGaopZQX0cTdg",
+    "pri" : "1",
+    "rep" : "0",
+    "docs.count" : "2",
+    "docs.deleted" : "0",
+    "store.size" : "11.4kb",
+    "pri.store.size" : "11.4kb"
+  },
+  {
+    "health" : "yellow",
+    "status" : "open",
+    "index" : "parking_violations_index",
+    "uuid" : "cr6ddZ-qTGGA6ihQEUFkkA",
+    "pri" : "5",
+    "rep" : "1",
+    "docs.count" : "100",
+    "docs.deleted" : "0",
+    "store.size" : "342.6kb",
+    "pri.store.size" : "342.6kb"
+  }
+]

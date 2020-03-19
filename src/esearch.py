@@ -28,11 +28,7 @@ def create_and_update_index(index_name, doc_type):
 
 def push(listobj,es,page_size):
     for i in range(len(listobj)):
-        print(i)
-        print(listobj[i])
         for j in range(page_size):
-            print(j)
-            print(listobj[i][j])
             listobj[i][j]['issue_date'] = datetime.strptime(listobj[i][j]['issue_date'],'%m/%d/%Y')
             es.index(index="parking_violations_index",ignore=400,doc_type="violations",id=int(listobj[i][j]['summons_number']), body=(listobj[i][j]))
 

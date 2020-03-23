@@ -24,6 +24,17 @@ Then, pass a commandline argument like the following to run:
 
 '''
 
+To run Elastisearch and Kibana, first bring up the Docker-compose image using the command 
+'''
+    docker-comopse up -d
+'''
+Followed by the docker-compose command to run the program:
+'''
+    docker-compose run -e APP_KEY={YOUR_APP_KEY} pyth -m main.py --page_size=1 --num_pages=1 --output=es
+'''
+
+Please note that the output=es argument is ESSENTIAL to return the results to elasticsearch and kibana rather than the screen or a designated output file. 
+
 
 Where:
 
